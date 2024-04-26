@@ -1,5 +1,6 @@
 package com.example.GTICSLAB420201497.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,16 +28,19 @@ public class Employees {
     private String phoneNumber;
     @Column(name = "hire_date", nullable = false)
     private LocalDateTime hireDate;
-    @Column(name = "job_id", nullable = false)
-    private String jobId;
+    @ManyToOne
+    @JoinColumn(name = "job_id", nullable = false)
+    private Jobs job;
     @Column(name = "salary")
     private Double salary;
     @Column(name = "commission_pct")
     private Double commissionPct;
-    @Column(name = "manager_id")
-    private Integer managerId;
-    @Column(name = "department_id")
-    private Integer departmentId;
+    @ManyToOne
+    @JoinColumn(name = "manager_id")
+    private Employees manager;
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Departments department;
     @Column(name = "enabled")
     private Integer enabled;
 }
