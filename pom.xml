@@ -12,7 +12,7 @@
 	<artifactId>GTICS-LAB4-20201497</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>GTICS-LAB4-20201497</name>
-	<description>LAB4 de gtics</description>
+	<description>LAB4 de GTICS</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
