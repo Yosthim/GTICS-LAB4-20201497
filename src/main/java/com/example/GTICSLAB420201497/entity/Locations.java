@@ -1,9 +1,6 @@
 package com.example.GTICSLAB420201497.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +20,7 @@ public class Locations {
     private String city;
     @Column(name = "state_province")
     private String stateProvince;
-    @Column(name = "country_id")
-    private Integer countryId;
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Countries country;
 }
